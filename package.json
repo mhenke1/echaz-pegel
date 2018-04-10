@@ -1,0 +1,25 @@
+{
+  "name": "echaz-pegel",
+  "main": "app.js",
+  "description": "Echaz Pegel",
+  "version": "0.1.1",
+  "private": false,
+  "engines": {
+    "node": "8.9.*"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "cfenv": "^1.0.4",
+    "express": "^4.16.x",
+    "node-cache": "^4.2.0",
+    "request": "^2.85.0"
+  },
+  "author": "Martin Henke",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-loopback": "^10.0.0"
+  }
+}

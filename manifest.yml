@@ -1,0 +1,4 @@
+---
+applications:
+ - name: echaz-pegel
+   memory: 256M
