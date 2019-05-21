@@ -7,15 +7,15 @@ let request = Promise.promisify(require('request'));
 const NodeCache = require('node-cache');
 const pegelCache = new NodeCache({stdTTL: 60, checkperiod: 180});
 
-const requestString = 'http://www.hvz.lubw.baden-wuerttemberg.de/overview.html';
+const requestString = 'https://www.hvz.baden-wuerttemberg.de/js/hvz-data-peg-db.js';
 
 function getPegel() {
   return new Promise((resolve, reject) => {
     request(requestString)
       .then((response) => {
-        const regex = /Wannweil \/ Echaz',.*?,.*?,.*?,'(.*?)'/g;
-        var match = regex.exec(response.body)
-        let depth = match[1]
+        const regex = /Echaz\',.*?,'(.*?)'/gm;
+        var match = regex.exec(response.body);
+        let depth = match[1];
         resolve(
           {
             'frames': [
