@@ -22,7 +22,6 @@ function getPegel() {
               {
                 'text': 'Echaz ' + depth,
                 'icon': 'i19772',
-                'index': 0,
               },
             ],
           });
