@@ -3,7 +3,7 @@
 let express = require('express');
 let app = express();
 let Promise = require('bluebird');
-let request = Promise.promisify(require('request'));
+var needle = require('needle');
 const NodeCache = require('node-cache');
 const pegelCache = new NodeCache({stdTTL: 60, checkperiod: 180});
 
@@ -43,7 +43,8 @@ function selectIcon(depth) {
 
 function getPegel() {
   return new Promise((resolve, reject) => {
-    request(requestString)
+    
+    needle('get', requestString)
       .then((response) => {
         const regex = /Echaz\',.*?,'(.*?)'/gm;
         let match = regex.exec(response.body);
